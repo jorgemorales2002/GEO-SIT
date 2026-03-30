@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -5,9 +6,10 @@
 
 <style>
 
-/* RESET */
-body {
+/* BASE */
+html, body {
   margin: 0;
+  height: 100%;
   font-family: "Segoe UI", Arial, sans-serif;
 }
 
@@ -38,24 +40,34 @@ nav a {
   padding: 12px 15px;
   text-decoration: none;
   font-weight: bold;
+  cursor: pointer;
 }
 
 nav a:hover {
   background: #0d2b45;
 }
 
-/* CONTENEDOR PRINCIPAL */
-.container {
-  display: flex;
+/* SECCIONES */
+.section {
+  display: none;
   height: calc(100vh - 110px);
 }
 
-/* PANEL LATERAL */
+.active {
+  display: block;
+}
+
+/* CONTENEDOR */
+.container {
+  display: flex;
+  height: 100%;
+}
+
+/* SIDEBAR */
 .sidebar {
-  width: 280px;
+  width: 260px;
   background: #f4f4f4;
   padding: 15px;
-  overflow-y: auto;
   border-right: 2px solid #ddd;
 }
 
@@ -65,12 +77,10 @@ nav a:hover {
 
 /* BOTONES */
 .btn {
-  display: block;
   background: #1f4e79;
   color: white;
   padding: 10px;
   margin: 8px 0;
-  text-align: left;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -82,6 +92,7 @@ nav a:hover {
 /* VISOR */
 .viewer {
   flex: 1;
+  height: 100%;
 }
 
 iframe {
@@ -90,22 +101,13 @@ iframe {
   border: none;
 }
 
-/* SECCIONES */
-.section {
-  display: none;
-  padding: 20px;
-}
-
-.active {
-  display: block;
-}
-
+/* TARJETAS */
 .card {
   background: white;
   padding: 20px;
   border-radius: 10px;
   max-width: 800px;
-  margin: auto;
+  margin: 20px auto;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
@@ -116,7 +118,7 @@ iframe {
 
 <header>
   <img src="logo.png">
-  <h2>Geoportal SIG - Gobierno Autónomo Municipal de El Alto</h2>
+  <h2>Geoportal SIG - Municipio de El Alto</h2>
 </header>
 
 <nav>
@@ -133,7 +135,7 @@ iframe {
 <div id="institucion" class="section active">
   <div class="card">
     <h2>Institución</h2>
-    <p>El Gobierno Autónomo Municipal de El Alto utiliza herramientas SIG para la planificación territorial, gestión urbana y toma de decisiones estratégicas.</p>
+    <p>Gestión territorial mediante Sistemas de Información Geográfica.</p>
   </div>
 </div>
 
@@ -142,8 +144,7 @@ iframe {
   <div class="card">
     <h2>Marco Legal</h2>
     <ul>
-      <li>Plan de Ordenamiento Territorial (POT)</li>
-      <li>Ley de Autonomías</li>
+      <li>Plan de Ordenamiento Territorial</li>
       <li>Normativa urbana vigente</li>
     </ul>
   </div>
@@ -156,16 +157,16 @@ iframe {
     <div class="sidebar">
       <h3>Geovisores</h3>
 
-      <div class="btn" onclick="cargarVisor('visor1/index.html')">Mapa General</div>
-      <div class="btn" onclick="cargarVisor('visor2/index.html')">Uso de Suelo</div>
-      <div class="btn" onclick="cargarVisor('visor3/index.html')">Zonificación</div>
-      <div class="btn" onclick="cargarVisor('visor4/index.html')">Equipamientos</div>
-      <div class="btn" onclick="cargarVisor('visor5/index.html')">Riesgos</div>
+      <div class="btn" onclick="cargarVisor('RUTA_VISOR_1')">Mapa 1</div>
+      <div class="btn" onclick="cargarVisor('RUTA_VISOR_2')">Mapa 2</div>
+      <div class="btn" onclick="cargarVisor('RUTA_VISOR_3')">Mapa 3</div>
+      <div class="btn" onclick="cargarVisor('RUTA_VISOR_4')">Mapa 4</div>
+      <div class="btn" onclick="cargarVisor('RUTA_VISOR_5')">Mapa 5</div>
 
     </div>
 
     <div class="viewer">
-      <iframe id="visorFrame" src="visor1/index.html"></iframe>
+      <iframe id="visorFrame" src="RUTA_VISOR_1"></iframe>
     </div>
 
   </div>
@@ -175,8 +176,8 @@ iframe {
 <div id="documentos" class="section">
   <div class="card">
     <h2>Documentación</h2>
-    <p><a href="#">Reglamento POT</a></p>
-    <p><a href="#">Cartilla Uso de Suelo</a></p>
+    <p><a href="#">Documento 1</a></p>
+    <p><a href="#">Documento 2</a></p>
   </div>
 </div>
 
@@ -184,7 +185,7 @@ iframe {
 <div id="indicadores" class="section">
   <div class="card">
     <h2>Indicadores</h2>
-    <p>Indicadores urbanos y territoriales.</p>
+    <p>Indicadores territoriales.</p>
   </div>
 </div>
 
@@ -198,7 +199,7 @@ iframe {
     </div>
 
     <div class="viewer">
-      <iframe id="guiaFrame" src="guia_urbana/index.html"></iframe>
+      <iframe id="guiaFrame" src="RUTA_GUIA"></iframe>
     </div>
 
   </div>
@@ -208,30 +209,27 @@ iframe {
 <div id="contacto" class="section">
   <div class="card">
     <h2>Contacto</h2>
-    <p>Email: contacto@elalto.gob.bo</p>
+    <p>Email institucional</p>
   </div>
 </div>
 
 <script>
 
-/* CAMBIAR SECCIONES */
 function mostrar(id) {
-  let secciones = document.querySelectorAll('.section');
-  secciones.forEach(sec => sec.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
 
-/* CAMBIAR VISOR */
 function cargarVisor(ruta) {
   document.getElementById("visorFrame").src = ruta;
 }
 
-/* GUIA URBANA */
 function cargarGuia() {
-  document.getElementById("guiaFrame").src = "guia_urbana/index.html";
+  document.getElementById("guiaFrame").src = "guía_urbana/index.html";
 }
 
 </script>
 
 </body>
 </html>
+
