@@ -157,16 +157,16 @@ iframe {
     <div class="sidebar">
       <h3>Geovisores</h3>
 
-      <div class="btn" onclick="cargarVisor('RUTA_VISOR_1')">Mapa 1</div>
-      <div class="btn" onclick="cargarVisor('RUTA_VISOR_2')">Mapa 2</div>
-      <div class="btn" onclick="cargarVisor('RUTA_VISOR_3')">Mapa 3</div>
-      <div class="btn" onclick="cargarVisor('RUTA_VISOR_4')">Mapa 4</div>
-      <div class="btn" onclick="cargarVisor('RUTA_VISOR_5')">Mapa 5</div>
+      <div class="btn" onclick="cargarVisor('visor1/index.html')">Mapa 1</div>
+      <div class="btn" onclick="cargarVisor('visor2/index.html')">Mapa 2</div>
+      <div class="btn" onclick="cargarVisor('visor3/index.html')">Mapa 3</div>
+      <div class="btn" onclick="cargarVisor('visor4/index.html')">Mapa 4</div>
+      <div class="btn" onclick="cargarVisor('visor5/index.html')">Mapa 5</div>
 
     </div>
 
     <div class="viewer">
-      <iframe id="visorFrame" src="RUTA_VISOR_1"></iframe>
+      <iframe id="visorFrame" src="RUTA_GUIA"></iframe>
     </div>
 
   </div>
