@@ -225,7 +225,7 @@ function cargarVisor(ruta) {
 }
 
 function cargarGuia() {
-  document.getElementById("guiaFrame").src = "guía_urbana/index.html";
+  document.getElementById("guiaFrame").src = "guía_urbana/índice.html";
 }
 
 </script>
