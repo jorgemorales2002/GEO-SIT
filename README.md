@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Geoportal SIG - El Alto</title>
+<title>SISTEMA DE INFORMACION TERRITORRIAL</title>
 
 <style>
 
