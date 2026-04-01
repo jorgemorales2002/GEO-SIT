@@ -2,24 +2,25 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Geoportal SIG - Municipio de El Alto</title>
+<title>Geoportal SIG - El Alto</title>
 
 <style>
 
-/* BASE */
-html, body {
+/* ===== BASE ===== */
+body {
   margin: 0;
-  height: 100%;
-  font-family: "Segoe UI", Arial, sans-serif;
+  font-family: "Segoe UI", Arial;
+  background: #f4f6f9;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 header {
-  background: #1f4e79;
+  background: linear-gradient(90deg, #b71c1c, #7f0000);
   color: white;
-  padding: 12px 20px;
+  padding: 15px 25px;
   display: flex;
   align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 header img {
@@ -27,9 +28,13 @@ header img {
   margin-right: 15px;
 }
 
-/* MENU */
+header h2 {
+  margin: 0;
+}
+
+/* ===== MENU ===== */
 nav {
-  background: #163a5c;
+  background: #8e0000;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -37,62 +42,65 @@ nav {
 
 nav a {
   color: white;
-  padding: 12px 15px;
+  padding: 14px 18px;
   text-decoration: none;
   font-weight: bold;
-  cursor: pointer;
+  transition: 0.3s;
 }
 
 nav a:hover {
-  background: #0d2b45;
+  background: #5f0000;
 }
 
-/* SECCIONES */
+/* ===== SECCIONES ===== */
 .section {
   display: none;
-  height: calc(100vh - 110px);
+  height: calc(100vh - 120px);
 }
 
 .active {
   display: block;
 }
 
-/* CONTENEDOR */
+/* ===== CONTENEDOR ===== */
 .container {
   display: flex;
   height: 100%;
 }
 
-/* SIDEBAR */
+/* ===== SIDEBAR ===== */
 .sidebar {
-  width: 260px;
-  background: #f4f4f4;
-  padding: 15px;
-  border-right: 2px solid #ddd;
+  width: 270px;
+  background: white;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.05);
 }
 
 .sidebar h3 {
-  color: #1f4e79;
+  color: #b71c1c;
 }
 
-/* BOTONES */
+/* ===== BOTONES ===== */
 .btn {
-  background: #1f4e79;
+  background: linear-gradient(45deg, #d32f2f, #9a0007);
   color: white;
-  padding: 10px;
-  margin: 8px 0;
-  border-radius: 5px;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
   cursor: pointer;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: bold;
 }
 
 .btn:hover {
-  background: #163a5c;
+  transform: scale(1.05);
 }
 
-/* VISOR */
+/* ===== VISOR ===== */
 .viewer {
   flex: 1;
-  height: 100%;
 }
 
 iframe {
@@ -101,14 +109,20 @@ iframe {
   border: none;
 }
 
-/* TARJETAS */
+/* ===== TARJETAS ===== */
 .card {
   background: white;
-  padding: 20px;
-  border-radius: 10px;
-  max-width: 800px;
-  margin: 20px auto;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 30px auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  border-top: 6px solid #b71c1c;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: #b71c1c;
 }
 
 </style>
@@ -135,16 +149,16 @@ iframe {
 <div id="institucion" class="section active">
   <div class="card">
     <h2>Institución</h2>
-    <p>Gestión territorial mediante Sistemas de Información Geográfica.</p>
+    <p>Plataforma oficial de gestión territorial basada en Sistemas de Información Geográfica (SIG).</p>
   </div>
 </div>
 
-<!-- MARCO LEGAL -->
+<!-- MARCO -->
 <div id="marco" class="section">
   <div class="card">
     <h2>Marco Legal</h2>
     <ul>
-      <li>Plan de Ordenamiento Territorial</li>
+      <li>Plan de Ordenamiento Territorial (POT)</li>
       <li>Normativa urbana vigente</li>
     </ul>
   </div>
@@ -157,16 +171,16 @@ iframe {
     <div class="sidebar">
       <h3>Geovisores</h3>
 
-      <div class="btn" onclick="cargarVisor('visor1/index.html')">Mapa 1</div>
-      <div class="btn" onclick="cargarVisor('visor2/index.html')">Mapa 2</div>
-      <div class="btn" onclick="cargarVisor('visor3/index.html')">Mapa 3</div>
-      <div class="btn" onclick="cargarVisor('visor4/index.html')">Mapa 4</div>
-      <div class="btn" onclick="cargarVisor('visor5/index.html')">Mapa 5</div>
+      <div class="btn" onclick="cargarVisor('visor1/index.html')">Mapa Base</div>
+      <div class="btn" onclick="cargarVisor('visor2/index.html')">Uso de Suelo</div>
+      <div class="btn" onclick="cargarVisor('visor3/index.html')">Zonificación</div>
+      <div class="btn" onclick="cargarVisor('visor4/index.html')">Equipamientos</div>
+      <div class="btn" onclick="cargarVisor('visor5/index.html')">Riesgos</div>
 
     </div>
 
     <div class="viewer">
-      <iframe id="visorFrame" src="RUTA_GUIA"></iframe>
+      <iframe id="visorFrame"></iframe>
     </div>
 
   </div>
@@ -176,8 +190,8 @@ iframe {
 <div id="documentos" class="section">
   <div class="card">
     <h2>Documentación</h2>
-    <p><a href="#">Documento 1</a></p>
-    <p><a href="#">Documento 2</a></p>
+    <p><a href="#">📄 Documento 1</a></p>
+    <p><a href="#">📄 Documento 2</a></p>
   </div>
 </div>
 
@@ -185,21 +199,21 @@ iframe {
 <div id="indicadores" class="section">
   <div class="card">
     <h2>Indicadores</h2>
-    <p>Indicadores territoriales.</p>
+    <p>Visualización de indicadores territoriales y urbanos.</p>
   </div>
 </div>
 
-<!-- GUIA URBANA -->
+<!-- GUIA -->
 <div id="guia" class="section">
   <div class="container">
 
     <div class="sidebar">
       <h3>Guía Urbana</h3>
-      <div class="btn" onclick="cargarGuia()">Abrir Geovisor</div>
+      <div class="btn" onclick="cargarGuia()">Abrir Guía</div>
     </div>
 
     <div class="viewer">
-      <iframe id="guiaFrame" src="RUTA_GUIA"></iframe>
+      <iframe id="guiaFrame"></iframe>
     </div>
 
   </div>
@@ -209,7 +223,7 @@ iframe {
 <div id="contacto" class="section">
   <div class="card">
     <h2>Contacto</h2>
-    <p>Email institucional</p>
+    <p>Email institucional: contacto@municipio.gob.bo</p>
   </div>
 </div>
 
@@ -225,11 +239,10 @@ function cargarVisor(ruta) {
 }
 
 function cargarGuia() {
-  document.getElementById("guiaFrame").src = "guía_urbana/índice.html";
+  document.getElementById("guiaFrame").src = "guia_urbana/index.html";
 }
 
 </script>
 
 </body>
 </html>
-
