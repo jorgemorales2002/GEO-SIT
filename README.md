@@ -140,6 +140,7 @@ a {
   <a onclick="mostrar('marco')">Marco Legal</a>
   <a onclick="mostrar('geo')">Geovisores</a>
   <a onclick="mostrar('documentos')">Documentación</a>
+  <a onclick="mostrar('mapas')">Mapas</a>
   <a onclick="mostrar('indicadores')">Indicadores</a>
   <a onclick="mostrar('guia')">Guía Urbana</a>
   <a onclick="mostrar('contacto')">Contacto</a>
