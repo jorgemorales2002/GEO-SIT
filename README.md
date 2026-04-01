@@ -132,7 +132,7 @@ a {
 
 <header>
   <img src="logo.png">
-  <h2>Geoportal SIG - Municipio de El Alto</h2>
+  <h2>SISTEMA DE INFORMACION TERRITORRIAL</h2>
 </header>
 
 <nav>
