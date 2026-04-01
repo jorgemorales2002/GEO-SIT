@@ -196,10 +196,10 @@ a {
   </div>
 </div>
 
-<!-- MAPAS -->
-<div id="marco" class="section">
+<!-- Mapas -->
+<div id="Mapas" class="section">
   <div class="card">
-    <h2>Marco Legal</h2>
+    <h2>Mapas</h2>
     <ul>
       <li>Crecimiento historico</li>
       <li>Proteccion</li>
