@@ -200,7 +200,7 @@ a {
 <div id="Mapas" class="section">
   <div class="card">
     <h2>Mapas</h2>
-    </ul>
+    <ul>
       <li>Crecimiento historico</li>
       <li>Proteccion</li>
       <li>Restriccion</li>
