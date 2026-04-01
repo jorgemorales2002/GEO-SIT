@@ -196,6 +196,18 @@ a {
   </div>
 </div>
 
+<!-- MAPAS -->
+<div id="marco" class="section">
+  <div class="card">
+    <h2>Marco Legal</h2>
+    <ul>
+      <li>Crecimiento historico</li>
+      <li>Proteccion</li>
+      <li>Restriccion</li>
+    </ul>
+  </div>
+</div>
+
 <!-- INDICADORES -->
 <div id="indicadores" class="section">
   <div class="card">
