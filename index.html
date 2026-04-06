@@ -124,26 +124,26 @@ iframe {
 a {
   color: #b71c1c;
 }
+  
 .institucion-contenedor {
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  gap: 20px;
 }
 
 .institucion-imagen {
   flex: 1;
-  overflow: hidden;
 }
 
 .institucion-imagen img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;   /* 🔥 clave */
+  display: block;
 }
 
 .institucion-texto {
   flex: 1;
-  padding: 30px;
-  color: black;
+  padding: 20px;
   text-align: justify;
 }
 
