@@ -132,16 +132,13 @@ a {
 
 .institucion-imagen {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #e0e0e0; /* opcional */
+  overflow: hidden;
 }
 
-institucion-imagen img {
+.institucion-imagen img {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%;
+  object-fit: cover;
 }
 
 .institucion-texto {
