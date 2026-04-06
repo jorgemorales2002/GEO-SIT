@@ -124,6 +124,34 @@ iframe {
 a {
   color: #b71c1c;
 }
+.institucion-contenedor {
+  display: flex;
+  align-items: center;
+  background: #3aa6c9;
+}
+
+.institucion-imagen {
+  flex: 1;
+}
+
+.institucion-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.institucion-texto {
+  flex: 1;
+  padding: 30px;
+  color: white;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .institucion-contenedor {
+    flex-direction: column;
+  }
+}
 
 </style>
 </head>
